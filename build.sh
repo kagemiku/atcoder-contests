@@ -4,7 +4,7 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-CPP="g++-6"
+CPP="g++-5"
 CPP_FLAGS="-std=c++1y"
 TARGET=$1
 
