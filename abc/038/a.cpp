@@ -22,10 +22,14 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    string s;
+    cin >> s;
 
-    cout << (b + a - 1) / a << endl;
+    if ( s[s.length() - 1] == 'T' ) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
 
     return 0;
 }

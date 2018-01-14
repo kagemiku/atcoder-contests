@@ -22,10 +22,15 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int a, b, n;
+    cin >> a >> b >> n;
 
-    cout << (b + a - 1) / a << endl;
+    FOR(i, 1, INF) {
+        if ( i >= n && i % a == 0 && i % b == 0 ) {
+            cout << i << endl;
+            break;
+        }
+    }
 
     return 0;
 }

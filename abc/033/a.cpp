@@ -22,10 +22,18 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    string n;
+    cin >> n;
 
-    cout << (b + a - 1) / a << endl;
+    int a = n[0];
+    FOR(i, 1, 4) {
+        if ( n[i] != a ) {
+            cout << "DIFFERENT" << endl;
+            return 0;
+        }
+    }
+
+    cout << "SAME" << endl;
 
     return 0;
 }
