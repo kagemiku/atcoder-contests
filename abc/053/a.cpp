@@ -22,10 +22,10 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int x;
+    cin >> x;
 
-    cout << (b + a - 1) / a << endl;
+    cout << ((x >= 1200) ? "ARC" : "ABC") << endl;
 
     return 0;
 }

@@ -22,10 +22,12 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
-
-    cout << (b + a - 1) / a << endl;
+    int a[3];
+    REP(i, 3) {
+        cin >> a[i];
+    }
+    sort(a, a + 3);
+    cout << a[1] << endl;
 
     return 0;
 }

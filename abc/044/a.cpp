@@ -22,10 +22,10 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int n, k, x, y;
+    cin >> n >> k >> x >> y;
 
-    cout << (b + a - 1) / a << endl;
+    cout << min(n, k) * x + max(n-k, 0) * y << endl;
 
     return 0;
 }

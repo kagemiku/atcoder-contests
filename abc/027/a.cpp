@@ -22,10 +22,17 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int l[3];
+    REP(i, 3) {
+        cin >> l[i];
+    }
 
-    cout << (b + a - 1) / a << endl;
+    sort(l, l + 3);
+    if ( l[0] == l[1] ) {
+        cout << l[2] << endl;
+    } else {
+        cout << l[0] << endl;
+    }
 
     return 0;
 }

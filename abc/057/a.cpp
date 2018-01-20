@@ -25,7 +25,7 @@ auto main() -> int
     int a, b;
     cin >> a >> b;
 
-    cout << (b + a - 1) / a << endl;
+    cout << (a + b) % 24 << endl;
 
     return 0;
 }

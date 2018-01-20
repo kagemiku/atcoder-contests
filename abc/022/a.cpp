@@ -22,10 +22,26 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int n, s, t;
+    cin >> n >> s >> t;
 
-    cout << (b + a - 1) / a << endl;
+    int sum = 0;
+    int w;
+    cin >> w;
+    if ( s <= w && w <= t ) {
+        ++sum;
+    }
+    REP(i, n - 1) {
+        int a;
+        cin >> a;
+        w += a;
+        if ( s <= w && w <= t ) {
+            ++sum;
+        }
+    }
+
+    cout << sum << endl;
+
 
     return 0;
 }

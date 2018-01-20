@@ -22,10 +22,17 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    string s;
+    cin >> s;
 
-    cout << (b + a - 1) / a << endl;
+    REP(i, s.length()) {
+        if ( s[i] == ',' ) {
+            cout << " ";
+        } else {
+            cout << s[i];
+        }
+    }
+    cout << endl;
 
     return 0;
 }

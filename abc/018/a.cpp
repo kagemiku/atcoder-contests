@@ -22,10 +22,17 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int a[3], b[3];
+    REP(i, 3) {
+        cin >> a[i];
+        b[i] = a[i];
+    }
+    sort(a, a + 3);
+    reverse(a, a + 3);
 
-    cout << (b + a - 1) / a << endl;
+    REP(i, 3) {
+        cout << distance(a, find(a, a + 3, b[i])) + 1 << endl;
+    }
 
     return 0;
 }

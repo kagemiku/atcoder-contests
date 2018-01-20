@@ -24,9 +24,7 @@ auto main() -> int
 {
     int a, b;
     cin >> a >> b;
-
-    cout << (b + a - 1) / a << endl;
-
+    cout << ceil((double)(a + b)/2.0) << endl;
     return 0;
 }
 

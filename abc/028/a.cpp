@@ -22,10 +22,18 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int n;
+    cin >> n;
 
-    cout << (b + a - 1) / a << endl;
+    if ( n == 100 ) {
+        cout << "Perfect" << endl;
+    } else if ( n >= 90 ) {
+        cout << "Great" << endl;
+    } else if ( n >= 60 ) {
+        cout << "Good" << endl;
+    } else {
+        cout << "Bad" << endl;
+    }
 
     return 0;
 }

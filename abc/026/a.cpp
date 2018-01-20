@@ -22,10 +22,18 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int a;
+    cin >> a;
 
-    cout << (b + a - 1) / a << endl;
+    int res = 0;
+    FOR(i, 1, 51) {
+        FOR(j, 1, 51) {
+            if ( i + j == a && i*j > res ) {
+                res = i*j;
+            }
+        }
+    }
+    cout << res << endl;
 
     return 0;
 }

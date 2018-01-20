@@ -25,7 +25,12 @@ auto main() -> int
     int a, b;
     cin >> a >> b;
 
-    cout << (b + a - 1) / a << endl;
+    int res = a + b;
+    if ( res >= 10 ) {
+        cout << "error" << endl;
+    } else {
+        cout << res << endl;
+    }
 
     return 0;
 }

@@ -22,10 +22,25 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int x, y;
+    cin >> x >> y;
 
-    cout << (b + a - 1) / a << endl;
+    vector<vector<int> > g;
+    g.push_back(vector<int>{1, 3, 5, 7, 8, 10, 12});
+    g.push_back(vector<int>{4, 6, 9, 11});
+    g.push_back(vector<int>{2});
+
+    for ( auto h : g ) {
+        if ( find(begin(h), end(h), x) != h.end() ) {
+            if ( find(begin(h), end(h), y) != h.end() ) {
+                cout << "Yes" << endl;
+                break;
+            } else {
+                cout << "No" << endl;
+                break;
+            }
+        }
+    }
 
     return 0;
 }

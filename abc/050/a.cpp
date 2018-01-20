@@ -23,9 +23,10 @@ const double PI     = acos(-1);
 auto main() -> int
 {
     int a, b;
-    cin >> a >> b;
+    char op;
+    cin >> a >> op >> b;
 
-    cout << (b + a - 1) / a << endl;
+    cout << ((op == '+') ? a + b : a - b) << endl;
 
     return 0;
 }

@@ -22,11 +22,18 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
 
-    cout << (b + a - 1) / a << endl;
-
+    int l = a + b;
+    int r = c + d;
+    if ( l > r ) {
+        cout << "Left" << endl;
+    } else if ( l < r ) {
+        cout << "Right" << endl;
+    } else {
+        cout << "Balanced" << endl;
+    }
     return 0;
 }
 

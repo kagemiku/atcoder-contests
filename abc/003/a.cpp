@@ -22,10 +22,11 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int n;
+    cin >> n;
 
-    cout << (b + a - 1) / a << endl;
+    double sum = (1 + n) * n / 2.0;
+    cout << int(sum / n * 10000) << endl;
 
     return 0;
 }

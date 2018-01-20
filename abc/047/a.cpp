@@ -22,11 +22,14 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int a, b, c;
+    cin >> a >> b >> c;
 
-    cout << (b + a - 1) / a << endl;
-
+    if ( a + b == c || b + c == a || c + a == b ) {
+        cout << "Yes" << endl;
+    } else {
+        cout << "No" << endl;
+    }
     return 0;
 }
 

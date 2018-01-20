@@ -22,10 +22,18 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
 
-    cout << (b + a - 1) / a << endl;
+    double rate1 = (double)b / a, rate2 = (double)d / c;
+
+    if ( rate1 > rate2 ) {
+        cout << "TAKAHASHI" << endl;
+    } else if ( rate1 < rate2 ) {
+        cout << "AOKI" << endl;
+    } else {
+        cout << "DRAW" << endl;
+    }
 
     return 0;
 }

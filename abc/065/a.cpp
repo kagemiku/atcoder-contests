@@ -22,11 +22,16 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int x, a, b;
+    cin >> x >> a >> b;
 
-    cout << (b + a - 1) / a << endl;
-
+    if ( a - b >= 0 ) {
+        cout << "delicious" << endl;
+    } else if ( b - a <= x ) {
+        cout << "safe" << endl;
+    } else {
+        cout << "dangerous" << endl;
+    }
     return 0;
 }
 

@@ -22,10 +22,22 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    string s;
+    cin >> s;
 
-    cout << (b + a - 1) / a << endl;
+    int n;
+    cin >> n;
+
+    vi ls;
+    REP(i, 5) {
+        REP(j, 5) {
+           ls.push_back(i * 10 + j);
+        }
+    }
+    sort(begin(ls), end(ls));
+
+    int name = ls[n - 1];
+    cout << s[name / 10] << s[name % 10] << endl;
 
     return 0;
 }

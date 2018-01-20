@@ -22,11 +22,14 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int n;
+    cin >> n;
 
-    cout << (b + a - 1) / a << endl;
-
+    if ( n/100 == n%10 ) {
+        cout << "Yes" << endl;
+    } else {
+        cout << "No" << endl;
+    }
     return 0;
 }
 

@@ -25,7 +25,11 @@ auto main() -> int
     int a, b;
     cin >> a >> b;
 
-    cout << (b + a - 1) / a << endl;
+    if ( a % b == 0 ) {
+        cout << 0 << endl;
+    } else {
+        cout << b - a % b << endl;
+    }
 
     return 0;
 }

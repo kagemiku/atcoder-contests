@@ -25,8 +25,11 @@ auto main() -> int
     int a, b;
     cin >> a >> b;
 
-    cout << (b + a - 1) / a << endl;
-
+    if ( a % 3 == 0 || b % 3 == 0 || (a + b) % 3 == 0 ) {
+        cout << "Possible" << endl;
+    } else {
+        cout << "Impossible" << endl;
+    }
     return 0;
 }
 

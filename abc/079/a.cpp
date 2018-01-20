@@ -22,10 +22,27 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    string n, n2;
+    cin >> n;
 
-    cout << (b + a - 1) / a << endl;
+    n2 = n;
+    reverse(begin(n), end(n));
+
+    bool f1 = true, f2 = true;
+    FOR(i, 1, 3) {
+       if ( n[i] != n[0] ) {
+            f1 = false;
+       }
+       if ( n2[i] != n2[0] ) {
+            f2 = false;
+       }
+    }
+
+    if ( f1 || f2 ) {
+        cout << "Yes" << endl;
+    } else {
+        cout << "No" << endl;
+    }
 
     return 0;
 }

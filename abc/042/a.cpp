@@ -22,10 +22,23 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int c5 = 0, c7 = 0;
+    REP(i, 3) {
+        int a;
+        cin >> a;
+        if ( a == 5 ) {
+            ++c5;
+        } else if ( a == 7 ) {
+            ++c7;
+        }
+    }
 
-    cout << (b + a - 1) / a << endl;
+    if ( c5 == 2 && c7 == 1 ) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+
 
     return 0;
 }

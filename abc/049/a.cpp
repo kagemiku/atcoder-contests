@@ -22,11 +22,14 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    char c;
+    cin >> c;
 
-    cout << (b + a - 1) / a << endl;
-
+    if ( c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ) {
+        cout << "vowel" << endl;
+    } else {
+        cout << "consonant" << endl;
+    }
     return 0;
 }
 

@@ -22,10 +22,14 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    set<int> s;
+    REP(i, 3) {
+        int a;
+        cin >> a;
+        s.insert(a);
+    }
 
-    cout << (b + a - 1) / a << endl;
+    cout << s.size() << endl;
 
     return 0;
 }

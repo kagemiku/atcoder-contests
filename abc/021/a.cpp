@@ -22,10 +22,28 @@ const double PI     = acos(-1);
 
 auto main() -> int
 {
-    int a, b;
-    cin >> a >> b;
+    int n;
+    cin >> n;
 
-    cout << (b + a - 1) / a << endl;
+    vi ls(4, 0);
+    int sum = 0;
+    int idx = 0;
+    while ( n != 0 ) {
+        int mod = n % 2;
+        if ( mod != 0 ) {
+            ++sum;
+        }
+        ls[idx++] = mod;
+        n /= 2;
+    }
+    cout << sum << endl;
+
+    int a[4] = {1, 2, 4, 8};
+    REP(i, ls.size()) {
+        if ( ls[i] ) {
+           cout << a[i] << endl;
+        }
+    }
 
     return 0;
 }
