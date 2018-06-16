@@ -21,58 +21,50 @@ const double PI     = acos(-1);
 
 int n, m;
 ll x[1000], y[1000], z[1000];
-
-
 typedef struct {
-    ll xx;
-    ll yy;
-    ll zz;
-} Res;
+    ll x;
+    ll y;
+    ll z;
+} Cake;
 
-bool f[1001][1001];
-Res dp[1001][1001];
-
-auto dfs(int num, int idx) -> Res
+template<class sFunc>
+auto solve(vector<Cake> c, sFunc sfunc) -> ll
 {
-    if (f[num][idx]) {
-        return dp[num][idx];
+    sort(begin(c), end(c), [sfunc](Cake a, Cake b) -> ll {
+                return sfunc(a) > sfunc(b);
+            });
+    ll res = 0LL;
+    REP(i, m) {
+        // cout << "(" << c[i].x << ", " << c[i].y << ", " << c[i].z << ")" << endl;
+        res += sfunc(c[i]);
     }
 
-    Res a, b;
-    if (idx == n - 1 || num == m) {
-        a = b = Res{0LL, 0LL, 0LL};
-    } else {
-        a =  dfs(num, idx + 1);
-        b =  dfs(num + 1, idx + 1);
-    }
-
-    ll aa = abs(a.xx) + abs(a.yy) + abs(a.zz);
-    ll bb = abs(b.xx + x[idx]) + abs(b.yy + y[idx]) + abs(b.zz + z[idx]);
-    f[num][idx] = true;
-    if (aa > bb) {
-        return dp[num][idx] = a;
-    } else {
-        b.xx += x[idx];
-        b.yy += y[idx];
-        b.zz += z[idx];
-        return dp[num][idx] = b;
-    }
+    return res;
 }
 
 
 auto main() -> int
 {
-    mset(dp, -1);
-
     cin >> n >> m;
 
+    vector<Cake> c;
     REP(i, n) {
         cin >> x[i] >> y[i] >> z[i];
+        c.push_back({x[i], y[i], z[i]});
     }
 
-    Res res1 = dfs(0, 0);
-    ll r1 = abs(res1.xx) + abs(res1.yy) + abs(res1.zz);
-    cout << r1 << endl;
+    ll r[8];
+    r[0] = solve(c, [](Cake c) -> ll { return c.x + c.y + c.z; });
+    r[1] = solve(c, [](Cake c) -> ll { return c.x + c.y - c.z; });
+    r[2] = solve(c, [](Cake c) -> ll { return c.x - c.y + c.z; });
+    r[3] = solve(c, [](Cake c) -> ll { return c.x - c.y - c.z; });
+    r[4] = solve(c, [](Cake c) -> ll { return -c.x + c.y + c.z; });
+    r[5] = solve(c, [](Cake c) -> ll { return -c.x + c.y - c.z; });
+    r[6] = solve(c, [](Cake c) -> ll { return -c.x - c.y + c.z; });
+    r[7] = solve(c, [](Cake c) -> ll { return -c.x - c.y - c.z; });
+
+    cout << *max_element(r, r+8) << endl;
+
 
     return 0;
 }
